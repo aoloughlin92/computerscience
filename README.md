@@ -1,2 +1,4 @@
-# computerscience
-computer science assignment 2
+Welcome to the Weather Station App
+=========================
+
+Raspberry pi Weather Station app
