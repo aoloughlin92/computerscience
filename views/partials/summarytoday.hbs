@@ -1,0 +1,26 @@
+
+  <section>
+    <div class="ui basic segment">
+      <div>        
+        <b>Current Summary:</b> <span id="currentsummary"></span> <br/>
+        <b>Minutely Summary:</b> <span id="minutelysummary"></span> <br/>
+        <b>Hourly Summary:</b> <span id="hourlysummary"></span> <br/>     
+        <b>Daily Summary: </b><span id="dailysummary"></span> <br/>  
+        <font size="-1"><a href="https://darksky.net/poweredby/">Powered by Dark Sky</a></font>
+      </div>
+    </div>
+    <script>  
+      const api_url = '/weather'
+      async function getSummary(){
+        const response = await fetch(api_url);
+        const json = await response.json();
+        document.getElementById('currentsummary').textContent = json.currently.summary;
+        document.getElementById('minutelysummary').textContent = json.minutely.summary;
+        document.getElementById('hourlysummary').textContent= json.hourly.summary;
+        document.getElementById('dailysummary').textContent= json.daily.summary;
+      }
+      getSummary();  
+    </script>
+  </section>
+
+  
